@@ -1,11 +1,11 @@
 import React from "react";
 
-import Header from "./Header";
-import MainContent from "./MainContent";
-import Footer from "./Footer";
-import BgIcons from "./BgIcons";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
+import BgIcons from "./components/BgIcons";
 // import { CONTEXT } from "../../App";
-import "../../css/homePage.scss";
+import "../../css/style.scss";
 
 export default function HomeApp() {
   //const [theme, setTheme] = useState(false);

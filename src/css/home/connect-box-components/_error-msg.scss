@@ -1,0 +1,55 @@
+.additional-options .platform-for-fortnite .radio-btn-error,
+.additional-options .platform-for-ow .radio-btn-error,
+.all-empty-error {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(10%, -50%);
+  width: 230px;
+  height: 30px;
+  display: flex;
+  padding: 3px 7px;
+  font-family: "DM Sans", sans-serif;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 99;
+
+  p {
+    font-size: 10px;
+    color: #353535;
+    font-weight: 500;
+  }
+
+  .warning-icon {
+    color: #ff6700;
+    margin-top: -1px;
+  }
+
+  .triangle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-60%, -50%);
+    // z-index: -999;
+
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.all-empty-error {
+  left: 0;
+  top: 100%;
+  transform: translate(0, 50%);
+  background: #fdfdfd;
+
+  .triangle {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: rotate(90deg) translate(-50%, 40%);
+  }
+}

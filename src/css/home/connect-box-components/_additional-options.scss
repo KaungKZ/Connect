@@ -1,0 +1,94 @@
+.additional-options {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-5%);
+  left: 0;
+  transition: transform 500ms, opacity 400ms;
+  pointer-events: none;
+  opacity: 0;
+
+  .platform-for-fortnite,
+  .platform-for-ow {
+    display: flex;
+    min-width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .radio-btn {
+      width: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //cursor: pointer;
+
+      input {
+        cursor: pointer;
+      }
+
+      input[type="radio"]:checked,
+      input[type="radio"]:not(:checked) {
+        position: absolute;
+        // left: -9999px;
+      }
+      label {
+        cursor: pointer;
+        padding-top: 30px;
+        position: relative;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .radio-icon {
+          color: #fff;
+          opacity: 0.8;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+
+          transform: translateX(-50%);
+
+          border-radius: 25px;
+        }
+
+        &::before {
+          left: 50%;
+          top: 0;
+          width: 16px;
+          height: 16px;
+          background: #5f5f5f;
+        }
+
+        // &::after {
+
+        // }
+      }
+
+      input[type="radio"]:not(:checked) + label::after,
+      input[type="radio"]:checked + label::after {
+        top: 4px;
+        left: 5px;
+        // top: 50%;
+        width: 8px;
+        height: 8px;
+        background: $primary-color;
+        transform: scale(0);
+        transition: transform 400ms;
+        // transform: translateY(-50%);
+      }
+
+      input[type="radio"]:checked + label::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  // &.focused {
+  //   transform: translateY(40%);
+  //   opacity: 1;
+  //   pointer-events: all;
+  // }
+}

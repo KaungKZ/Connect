@@ -1,7 +1,7 @@
 import React from "react";
-import covid from "../../images/covid.png";
-import footer_bg from "../../images/footer bg shape.svg";
-import copyright from "../../images/copyright.png";
+import covid from "../../../images/covid.png";
+import footer_bg from "../../../images/footer bg shape.svg";
+import copyright from "../../../images/copyright.png";
 
 export default function Footer() {
   return (

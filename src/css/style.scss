@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+@import "./base";
+
+@import "./root";
+
+// =========== HOME PAGE ===========
+
+// toggle and header
+
+@import "./home/header";
+
+// connect-box
+
+@import "./home/main-box";
+
+// footer
+
+@import "./home/footer";
+
+// bg-icons
+
+@import "./home/bg-icons";
+
+// ============= DASHBOARD PAGE ============

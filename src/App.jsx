@@ -1,6 +1,7 @@
 import React, { useState, createContext } from "react";
-import HomeApp from "./components/homePage/HomeApp";
-import MainApp from "./components/mainPage/MainApp";
+import HomeApp from "./pages/homePage/HomeApp";
+import MainApp from "./pages/mainPage/MainApp";
+import Toggle from "./pages/homePage/components/Toggle";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -18,10 +19,9 @@ export default function App() {
     <Router>
       <Switch>
         <CONTEXT.Provider value={contextValues}>
+          <Toggle></Toggle>
           <Route path="/" exact component={HomeApp}></Route>
-          {/* </CONTEXT.Provider> */}
-          {/* <CONTEXT.Provider value={contextValues}> */}
-          <Route path="/app" component={MainApp}></Route>
+          <Route path="/dashboard" component={MainApp}></Route>
         </CONTEXT.Provider>
       </Switch>
     </Router>

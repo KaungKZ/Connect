@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import logo from "../../images/logo.png";
-import header_bg from "../../images/home bg shape.svg";
-import { CONTEXT } from "../../App";
+import logo from "../../../images/logo.png";
+import header_bg from "../../../images/home bg shape.svg";
+import { CONTEXT } from "../../../App";
 
 export default function Header() {
   // console.log(CONTEXT);
-  const { theme, setTheme } = useContext(CONTEXT);
+
+  const { theme } = useContext(CONTEXT);
+
+  // console.log(theme);
 
   // console.log(values);
 
@@ -32,18 +35,18 @@ export default function Header() {
 
   // console.log(contextTheme);
 
-  function handleToggleClicked(e) {
-    e.target.classList.toggle("active");
-  }
+  // function handleToggleClicked(e) {
+  //   e.target.classList.toggle("active");
+  // }
 
   return (
-    <header className={theme ? "light-mode" : undefined}>
+    <header className={`home-header ${theme ? "light-mode" : ""}`}>
       <div className="container">
         <div className="logo">
           <img src={logo} alt="" />
         </div>
 
-        <div className="theme-toggle">
+        {/* <div className="theme-toggle">
           <p>Light Mode</p>
           <div
             className="toggle-btn"
@@ -52,7 +55,7 @@ export default function Header() {
               handleToggleClicked(e);
             }}
           ></div>
-        </div>
+        </div> */}
       </div>
       <div className="share-text">
         <a href="https://twitter.com/KaungKZ2000">Share</a>

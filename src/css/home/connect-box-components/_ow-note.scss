@@ -1,0 +1,49 @@
+.note {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .note-icon {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+[data-tooltip]::before {
+  font-family: "DM Sans", sans-serif;
+  content: attr(data-tooltip);
+  opacity: 0;
+  // visibility: hidden;
+  // transform: scale(0);
+  color: #353535;
+  font-size: 12px;
+  background: #ffffff;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: translateX(-50%) scale(0);
+  min-width: 300px;
+  min-height: 40px;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 0s ease-out, opacity 400ms;
+}
+
+[data-tooltip]:hover::before {
+  // visibility: visible;
+  transform: translateX(-50%) scale(1);
+  transition: transform 200ms ease-in;
+  opacity: 1;
+}
