@@ -1,0 +1,95 @@
+// import React from "react";
+import axios from "axios";
+
+export default function GetFortniteValues(
+  fortnite_username,
+  fortnite_platform,
+  setFortniteValues,
+  setIsFortniteLoading,
+  setIsFortnitePlayerFound
+) {
+  const proxy_URL = "https://cors-anywhere.herokuapp.com/";
+  const tracker_API_key = "2262ffae-2839-4fe9-b8da-1b1630e8b176";
+
+  axios
+    .get(
+      proxy_URL +
+        `https://api.fortnitetracker.com/v1/profile/${fortnite_platform}/${fortnite_username}`,
+      {
+        headers: {
+          "TRN-Api-Key": tracker_API_key,
+          Accept: "application/json",
+        },
+      }
+    )
+    .then((res) => {
+      if (res.data.error) {
+        setIsFortnitePlayerFound(false);
+        setIsFortniteLoading(false);
+        console.log("fortnite player not found");
+        return;
+      }
+
+      setIsFortnitePlayerFound(true);
+
+      // console.log(res);
+      // console.log(res);
+      const data = res.data;
+      const stats = res.data.lifeTimeStats;
+      const recent_match = res.data.recentMatches;
+
+      // console.log(recent_match);
+
+      setFortniteValues((prevState) => {
+        return {
+          ...prevState,
+          profile: {
+            name: data.epicUserHandle,
+            platform: data.platformNameLong,
+            account_id: data.accountId,
+          },
+          stats: {
+            kill_death_ratio: findStat(stats, "K/d"),
+            score: findStat(stats, "Score"),
+            win_percent: findStat(stats, "Win%"),
+            top_3s: findStat(stats, "Top 3s"),
+          },
+          matches: {
+            total: findStat(stats, "Matches Played"),
+            win: findStat(stats, "Wins"),
+          },
+          recent_match:
+            recent_match.length === 0
+              ? null
+              : {
+                  win: recent_match[0].top1 === 1 ? true : false,
+                  duration: recent_match[0].minutesPlayed,
+                  kill: recent_match[0].kills,
+                  matchID: recent_match[0].id,
+                },
+        };
+      });
+      setIsFortniteLoading(false);
+      // setIsPlayerFound((prev) => {
+      //   return [
+      //     ...prev,
+      //     {
+      //       value: "fortnite",
+      //       playerFound: true,
+      //     },
+      //   ];
+      // });
+    })
+    .catch((err) => {
+      if (err.response) {
+        setIsFortnitePlayerFound(false);
+        setIsFortniteLoading(false);
+        // console.log("ok");
+        console.log(err.response.data);
+      }
+    });
+
+  function findStat(arr, val) {
+    return arr.find((stat) => stat.key === val).value;
+  }
+}

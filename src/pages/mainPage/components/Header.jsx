@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import { CONTEXT } from "../../../App";
+import React from "react";
+// import { CONTEXT } from "../../../App";
 
 export default function Header() {
-  const { theme } = useContext(CONTEXT);
+  // const { theme } = useContext(CONTEXT);
   return (
-    <header className={`dashboard-header ${theme ? "light-mode" : ""}`}>
+    <header className="dashboard-header">
       <div className="container">
         <div className="title">Overview</div>
-        <div className="total-count">Total: 72k followers</div>
       </div>
     </header>
   );

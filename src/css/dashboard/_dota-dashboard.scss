@@ -1,0 +1,70 @@
+.dota-box {
+  border: 2px solid #f04e36;
+  .dota-profile {
+    .box-content {
+      // .username {
+      //   font-weight: 700;
+      //   font-size: 1.2rem;
+      // }
+
+      .go-to-profile-link {
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+  }
+  .dota-rank {
+    .box-content {
+      p {
+        // color: red;
+        font-size: 2.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .dota-total-matches {
+    .box-content {
+      .wins,
+      .loses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span:first-child {
+          font-size: 12px;
+          opacity: 0.8;
+        }
+
+        span:nth-child(2n) {
+          font-size: 2rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .dota-recent-match {
+    .box-content {
+      .status {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .radiant {
+        color: var(--primary-color);
+      }
+
+      .dire {
+        color: #f04e36;
+      }
+      span {
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+  }
+
+  // &::after {
+  //   background: #f04e36;
+  // }
+}

@@ -1,56 +1,138 @@
 .theme-toggle {
   // margin-top: 15px;
   // align-self: flex-end;
-  width: 30%;
+  width: auto;
   height: 120px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
   align-items: flex-end;
   float: right;
-  padding-right: 10%;
+  margin-right: 10%;
 
   // position: absolute;
   // top: 50px;
   // right: 5%;
   z-index: 99;
   p {
-    color: #fff;
+    color: var(--main-title-color);
+    transition: color 400ms;
     margin-bottom: 15px;
     font-weight: 700;
   }
 
   .toggle-btn {
+    // width: 80px;
+    // height: 35px;
+    // background: var(--primary-color);
+    // border-radius: 50px;
+    // position: relative;
+    // cursor: pointer;
+
+    position: relative;
+    display: inline-block;
     width: 80px;
     height: 35px;
-    background: $primary-color;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .circle {
+      border-radius: 25px;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--primary-color);
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+
+      .round {
+        border-radius: 34px;
+
+        &::before {
+          border-radius: 50%;
+        }
+      }
+
+      &::before {
+        margin-top: -0.5px;
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+    }
+
+    // input:checked + .circle {
+    //   background-color: #2196f3;
+    // }
+
+    input:focus + .circle {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    input:checked + .circle:before {
+      // -webkit-transform: translateX(26px);
+      // -ms-transform: translateX(26px);
+      transform: translate(42px, -50%);
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      pointer-events: none;
+
+      &.left {
+        left: 10px;
+        // right: 0;
+      }
+
+      &.right {
+        // left: 0;
+        right: 10px;
+      }
+    }
 
     // overflow: hidden;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 2.5px;
-      left: 3px;
-      // right: auto;
-      width: 30px;
-      height: 30px;
-      border-radius: 50px;
-      background: #efefef;
-      transition: left 400ms;
-      // z-index: 99;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 2.5px;
+    //   left: 3px;
+    //   // right: auto;
+    //   width: 30px;
+    //   height: 30px;
+    //   border-radius: 50px;
+    //   background: #efefef;
+    //   transition: left 400ms;
+    //   // z-index: 99;
+    // }
 
-    &.active {
-      &::after {
-        // right: 3px;
-        left: calc(100% - 33px);
-        // transition: right 600ms;
-      }
-    }
+    // &.active {
+    //   &::after {
+    //     // right: 3px;
+    //     left: calc(100% - 33px);
+    //     // transition: right 600ms;
+    //   }
+    // }
   }
 }
 

@@ -5,8 +5,19 @@
   font-family: "Montserrat", sans-serif;
 }
 
-$primary-color: #7cd685;
-$darkmode-bg-color: #5a5a5a;
-$lightmode-bg-color: #fdfdfd;
-$text-color: #353535;
-$card-color: #757575;
+html {
+  --primary-color: #7cd685;
+  --bg-color: #5a5a5a;
+  --text-color: #353535;
+  --card-color: #757575;
+  --main-title-color: #fff;
+  --bg-icon-color: #353535;
+  --dashboard-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="light"] {
+  --main-title-color: #353535;
+  --bg-color: #f9f9f9;
+  --bg-icon-color: #7cd685;
+  --dashboard-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}

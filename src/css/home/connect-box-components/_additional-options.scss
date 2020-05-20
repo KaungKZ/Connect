@@ -74,7 +74,7 @@
         // top: 50%;
         width: 8px;
         height: 8px;
-        background: $primary-color;
+        background: var(--primary-color);
         transform: scale(0);
         transition: transform 400ms;
         // transform: translateY(-50%);

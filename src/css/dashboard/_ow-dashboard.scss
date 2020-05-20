@@ -1,0 +1,44 @@
+.ow-box {
+  border: 2px solid #fa9c1d;
+  .ow-profile {
+    // .title {
+    //     font-weight: 700;
+    // }
+    .box-content {
+    }
+  }
+
+  .ow-activities {
+    .box-content {
+      span {
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .ow-playtime {
+    .box-content {
+      span {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  // .ow-activities {
+  //   .box-content {
+  //     span {
+  //       font-weight: 700;
+  //     }
+  //   }
+  // }
+  //   &::after {
+  //     background: #fa9c1d;
+  //   }
+}
+
+// .ow-box {
+//   .value-title {
+//     color: #fa9c1d;
+//   }
+// }

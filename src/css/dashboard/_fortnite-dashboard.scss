@@ -1,0 +1,121 @@
+.fortnite-box {
+  border: 2px solid #e25bff;
+  .fortnite-profile {
+    .box-content {
+      // .username {
+      //   font-weight: 700;
+      //   font-size: 1.2rem;
+      // }
+      .platform {
+        font-size: 12px;
+      }
+
+      .wrapper-account-id {
+        position: relative;
+        display: flex;
+        background: #5c5c5c;
+        border-radius: 9px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background 400ms;
+        .account-id {
+          font-size: 12px;
+          margin-right: 7px;
+
+          &.hide {
+            display: none;
+          }
+        }
+        .copy-icon {
+          margin-left: 7px;
+          font-size: 0.8rem;
+        }
+
+        &:hover {
+          background: #4e4e4e;
+        }
+
+        &.copied-text-hide {
+          &::after {
+            content: "copied to clipboard";
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            transform: translate(-50%, -120%);
+            left: 50%;
+            background: #707070;
+            width: 150px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 9px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 400ms;
+          }
+        }
+
+        &.copied-text-show {
+          &::after {
+            content: "copied to clipboard";
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            transform: translate(-50%, -120%);
+            left: 50%;
+            background: #707070;
+            width: 150px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // text-align: center;
+            border-radius: 9px;
+            opacity: 1;
+            pointer-events: all;
+            transition: opacity 400ms;
+            //   content: "copied to clipboard";
+            //   opacity: 1;
+            //   pointer-events: all;
+          }
+        }
+      }
+    }
+  }
+
+  .fortnite-stats {
+    .box-content {
+      span {
+        font-weight: 700;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .fortnite-matches {
+    .box-content {
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .fortnite-recent-match {
+    .box-content {
+      .no-recent-match-text {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 12px;
+      }
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  // &::after {
+  //   background: #e25bff;
+  // }
+}

@@ -1,0 +1,19 @@
+.csgo-box {
+  border: 2px solid #303358;
+
+  .csgo-overview,
+  .csgo-matches {
+    .box-content {
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  .csgo-matches {
+    .box-content {
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+}

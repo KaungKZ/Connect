@@ -1,0 +1,309 @@
+.dashboards {
+  margin-top: 70px;
+  width: 100%;
+
+  .dashboard {
+    width: 90%;
+    margin: 0 auto 70px auto;
+
+    .dashboard-container {
+      .title {
+        width: fit-content;
+        margin: auto;
+        padding: 5px 15px;
+        // text-align: center;
+        color: #fff;
+        background: #4e4e4e;
+        height: 40px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 9px;
+        margin-bottom: 10px;
+
+        .game-img {
+          width: 25px;
+          // height: 25px;
+          margin-right: 10px;
+        }
+
+        .game-username {
+          margin-left: 10px;
+          font-size: 1rem;
+          font-weight: 700;
+          font-family: "DM Sans", sans-serif !important;
+        }
+      }
+      .box {
+        // position: relative;
+        // min-height: 200px;
+        background: #757575;
+        color: #fff;
+        padding: 10px 20px;
+        // display: flex;
+        width: 100%;
+        // justify-content: space-between;
+        // align-items: center;
+        display: grid;
+        // grid-template-columns: minmax(20%, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        grid-template-rows: minmax(225px, 1fr);
+        column-gap: 20px;
+        border-radius: 9px 6px 6px 9px;
+        // -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+        // -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--dashboard-box-shadow);
+        // border: 3px solid #fa9c1d;
+        border-radius: 9px;
+
+        .box-column {
+          // min-height: inherit;
+          display: flex;
+          flex-direction: column;
+          //   justify-content: space-around;
+          //   align-items: center;
+
+          .box-title {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.8;
+            font-size: 14px;
+            // color: #56d663;
+            // font-weight: 700;
+            // background: rgba(90, 90, 90, 0.45);
+            // color: #fff;
+            // border-radius: 9px;
+            // font-family: "DM Sans", sans-serif !important;
+            // font-weight: 700;
+          }
+
+          .box-content {
+            // font-family: "DM Sans", sans-serif !important;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            .username {
+              font-weight: 700;
+              font-size: 1.2rem;
+            }
+
+            // p,
+            // span {
+            //   font-size: 14px;
+            // }
+
+            img {
+              width: 64px;
+              height: 64px;
+            }
+
+            .value-title {
+              font-size: 12px;
+              opacity: 0.8;
+              color: #fff;
+              font-weight: 400;
+              margin-left: 7px;
+            }
+          }
+        }
+
+        // .dota-profile {
+        //   .box-content {
+        //     .username {
+        //       font-weight: 700;
+        //       font-size: 1.2rem;
+        //     }
+        //     .go-to-profile-link {
+        //       text-decoration: underline;
+        //       color: #fff;
+        //     }
+        //   }
+        // }
+        // .dota-rank {
+        //   .box-content {
+        //     p {
+        //       // color: red;
+        //       font-size: 2.2rem;
+        //       font-weight: 700;
+        //     }
+        //   }
+        // }
+        // .dota-total-matches {
+        //   .box-content {
+        //     .wins,
+        //     .loses {
+        //       display: flex;
+        //       flex-direction: column;
+        //       align-items: center;
+        //       span:first-child {
+        //         font-size: 12px;
+        //         opacity: 0.8;
+        //       }
+        //       span:nth-child(2n) {
+        //         font-size: 2.2rem;
+        //         font-weight: 700;
+        //       }
+        //     }
+        //   }
+        // }
+        // .dota-recent-match {
+        //   .box-content {
+        //     .status {
+        //       font-size: 1rem;
+        //       font-weight: 700;
+        //     }
+        //     .radiant {
+        //       color: var(--primary-color);
+        //     }
+        //     .dire {
+        //       color: red;
+        //     }
+        //     span {
+        //       font-size: 14px;
+        //     }
+        //   }
+        // }
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: 0;
+        //   right: 0;
+        //   height: 100%;
+        //   width: 100%;
+        //   border-radius: 9px;
+        //   // background: #f04e36;
+        // }
+
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   top: 0;
+        //   right: 0;
+        //   height: calc(100% - 5px);
+        //   width: calc(100% -5px);
+        //   border-radius: 9px;
+        //   background: #fff;
+        // }
+      }
+
+      // dota-dashboard
+
+      @import "./dota-dashboard.scss";
+
+      // fortnite-dashboard
+
+      @import "./fortnite-dashboard.scss";
+
+      // ow-dashboard
+
+      @import "./ow-dashboard.scss";
+
+      // csgo-dashboard
+
+      @import "./csgo-dashboard.scss";
+
+      // .dota-box::after {
+      //   background: #f04e36;
+      // }
+      // .fortnite-box::after {
+      //   background: #e25bff;
+      // }
+
+      // .ow-box::after {
+      //   background: #fa9c1d;
+      // }
+    }
+
+    // .player-not-found {
+    //   width: 80%;
+    //   margin: auto;
+    //   background: #757575;
+    // }
+
+    .player-not-found {
+      background: #757575;
+      border-radius: 9px;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 250px;
+      // font-family: "DM Sans", sans-serif !important;
+
+      .icon {
+        margin-right: 30px;
+        img {
+          width: 125px;
+          height: 125px;
+        }
+      }
+
+      .text {
+        // font-family: "DM Sans", sans-serif !important;
+        font-size: 14px;
+
+        p:first-child {
+          margin-bottom: 15px;
+        }
+
+        .back-to-home-link {
+          padding-left: 7px;
+          a {
+            text-decoration: underline;
+            color: var(--primary-color);
+            opacity: 0.8;
+            transition: opacity 300ms;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &.dota {
+        border: 2px solid rgba(240, 78, 54, 0.5);
+        // opacity: 0.5;
+      }
+
+      &.fortnite {
+        border: 2px solid rgba(226, 91, 255, 0.5);
+      }
+
+      &.ow {
+        border: 2px solid rgba(250, 156, 29, 0.5);
+      }
+
+      &.csgo {
+        border: 2px solid rgba(48, 51, 88, 0.5);
+      }
+    }
+  }
+
+  .dashboard.loading-active {
+    width: 90%;
+    margin: 0 auto 70px auto;
+    background: #757575;
+    min-height: 200px;
+    border-radius: 9px;
+    animation: 1.5s linear infinite alternate loading_animation;
+    opacity: 0.5;
+  }
+
+  @keyframes loading_animation {
+    0% {
+      opacity: 0.5;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

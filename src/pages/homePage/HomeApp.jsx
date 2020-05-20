@@ -8,14 +8,6 @@ import BgIcons from "./components/BgIcons";
 import "../../css/style.scss";
 
 export default function HomeApp() {
-  //const [theme, setTheme] = useState(false);
-  // function chgBg () {
-  // const theme = useContext(CONTEXT);
-
-  // console.log(theme);
-
-  // }
-
   return (
     // <CONTEXT.Provider value={theme}>
     <>

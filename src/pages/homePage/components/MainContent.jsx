@@ -14,10 +14,10 @@ export default function MainContent() {
   const [redirect, setRedirect] = useState(false);
   // const [usernames, setUsernames] = useState({});
 
-  const [dotaValues, setDotaValues] = useState({});
-  const [fortniteValues, setFortniteValues] = useState({});
-  const [owValues, setOwValues] = useState({});
-  const [csgoValues, setCsgoValues] = useState({});
+  const [dotaInputs, setDotaInputs] = useState({});
+  const [fortniteInputs, setFortniteInputs] = useState({});
+  const [owInputs, setOwInputs] = useState({});
+  const [csgoInputs, setCsgoInputs] = useState({});
 
   const [areInputsEmpty, setAreInputsEmpty] = useState(false);
   const [areFortniteRadiosEmpty, setAreFortniteRadiosEmpty] = useState(null);
@@ -83,26 +83,34 @@ export default function MainContent() {
 
     const owRegion = [...ow_regions].find((radio) => radio.checked);
 
-    setDotaValues({
+    setDotaInputs({
       username: inputs[0].value ? inputs[0].value : null,
     });
 
-    setFortniteValues({
+    setFortniteInputs({
       username: inputs[1].value ? inputs[1].value : null,
       platform: fortnitePlatform ? fortnitePlatform.value : null,
     });
 
-    setOwValues({
-      username: inputs[2].value ? inputs[2].value : null,
+    setOwInputs({
+      username: inputs[2].value ? inputs[2].value.replace(/#/gm, "-") : null,
       platform: owPlatform ? owPlatform.value : null,
       region: owRegion ? owRegion.value : null,
     });
 
-    setCsgoValues({
-      username: inputs[3].value ? inputs[3].value : null,
+    setCsgoInputs({
+      username: inputs[3].value ? checkAndGetSteamID(inputs[3].value) : null,
     });
 
     setRedirect(true);
+  }
+
+  function checkAndGetSteamID(val) {
+    if (val.includes("http")) {
+      return val.replace(/\D/g, "");
+    } else {
+      return val;
+    }
   }
 
   // function calculateFortnitePlatform () {
@@ -119,7 +127,7 @@ export default function MainContent() {
           push
           to={{
             pathname: "/dashboard",
-            state: { dotaValues, fortniteValues, owValues, csgoValues },
+            state: { dotaInputs, fortniteInputs, owInputs, csgoInputs },
           }}
         ></Redirect>
       );

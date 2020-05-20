@@ -61,22 +61,26 @@ export default function InputList({ i }) {
           className={`username-input ${classNameArr[i]}-username`}
           autoComplete="off"
           onFocus={() => setAreInputsEmpty(false)}
+          minLength={i === 0 ? "2" : "0"}
+          maxLength={i === 0 ? "32" : "100"}
           // autoFocus={ i === 1 || i === 2 ? (e) => handleFocusOnInput(e.target.className) : null}
           required
         />
         <label className="input-label">
           <span className="username">
             {`Enter ${
-              i === 0 || i === 3
-                ? "Steam ID"
+              i === 0
+                ? "Dota 2 ID"
                 : i === 1
                 ? "Epic Games username"
-                : "Battlenet tag"
+                : i === 2
+                ? "Battlenet tag"
+                : "Steam ID / Steam profile link"
             }`}
           </span>
         </label>
 
-        {i === 2 ? (
+        {i === 2 && (
           <div
             className="note"
             data-tooltip="PC users should enter the full BattleTag with numeric ID, such as RealReaper#12345.
@@ -88,12 +92,10 @@ export default function InputList({ i }) {
               className="note-icon"
             ></FontAwesomeIcon>
           </div>
-        ) : undefined}
+        )}
 
         <AdditionalOptions i={i}></AdditionalOptions>
-        {areInputsEmpty ? (
-          <ErrorMsgBox forWhat={"allEmpty"}></ErrorMsgBox>
-        ) : undefined}
+        {areInputsEmpty && <ErrorMsgBox forWhat={"allEmpty"}></ErrorMsgBox>}
       </div>
       {/* {areInputsEmpty ? console.log("empty") : console.log("nah")} */}
     </div>
