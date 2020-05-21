@@ -181,7 +181,7 @@
   }
   .home-header {
     .container {
-      .logo img {
+      .logo .logo-icon {
         width: 40px;
       }
     }
@@ -342,29 +342,94 @@
       }
     }
   }
+
+  .home-header {
+    .share-text a {
+      margin-top: -10px;
+    }
+  }
+  // .connect-box
+  //   .container
+  //   .box
+  //   .inputs
+  //   .input-form
+  //   .wrapper-content
+  //   .input
+  //   .wrapper-input
+  //   .username-input:focus
+  //   + .input-label
+  //   .username,
+  // .connect-box
+  //   .container
+  //   .box
+  //   .inputs
+  //   .input-form
+  //   .wrapper-content
+  //   .input
+  //   .wrapper-input
+  //   .username-input:valid
+  //   + .input-label
+  //   .username {
+  //   font-size: 12px;
+  // }
+
   .connect-box .container {
-    .box .inputs .input-form {
-      .wrapper-content .input {
-        .wrapper-input .username-input[type="text"] {
-          font-size: 12px;
-        }
-        .wrapper-input .note .note-icon {
-          font-size: 15px !important;
-        }
-        .wrapper-input [data-tooltip]::before {
-          min-width: 50px;
-          // width: 50px;
-          left: -50%;
-          font-size: 10px;
+    .box {
+      padding: 10% 6% 6% 6%;
+      .inputs .input-form {
+        .wrapper-content {
+          .input {
+            .wrapper-input .username-input:focus + .input-label .username,
+            .wrapper-input .username-input:valid + .input-label .username {
+              font-size: 12px;
+            }
+            .wrapper-input .additional-options {
+              width: 100%;
+              .platform-for-fortnite,
+              .platform-for-ow {
+                min-width: unset;
+                width: 40%;
+
+                .radio-btn label {
+                  .radio-icon {
+                    font-size: 14px;
+                  }
+
+                  &::before {
+                    width: 13px;
+                    height: 13px;
+                  }
+                }
+              }
+
+              .region-for-ow {
+                min-width: unset;
+                width: 50%;
+              }
+            }
+            .wrapper-input .username-input[type="text"] {
+              font-size: 12px;
+            }
+            .wrapper-input .note .note-icon {
+              font-size: 15px !important;
+            }
+            .wrapper-input [data-tooltip]::before {
+              min-width: 50px;
+              // width: 50px;
+              left: -50%;
+              font-size: 10px;
+            }
+
+            img {
+              width: 30px;
+            }
+          }
         }
 
-        img {
-          width: 30px;
+        .submit-btn {
+          font-size: 14px;
+          height: 35px;
         }
-      }
-
-      .submit-btn {
-        font-size: 14px;
       }
     }
   }
@@ -379,6 +444,42 @@
 
     .donate img {
       width: 45px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .home-header {
+    .share-text {
+      font-size: 12px;
+
+      a {
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .connect-box {
+    .container {
+      .box {
+        .inputs
+          .input-form
+          .wrapper-content
+          .input-ow
+          .wrapper-input
+          .additional-options
+          .select-box {
+          font-size: 10px;
+        }
+      }
+      .title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  footer {
+    .container {
+      width: 90%;
     }
   }
 }
