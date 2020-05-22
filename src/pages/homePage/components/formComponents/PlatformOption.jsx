@@ -43,7 +43,7 @@ export default function PlatformOption({ i }) {
         <input
           type="radio"
           id={PCinputID}
-          className={radio_className}
+          className={`${radio_className} radio-btn-input`}
           name={radio_name}
           value="pc"
           onClick={(e) => handleRemoveRadioError(e.target.className)}

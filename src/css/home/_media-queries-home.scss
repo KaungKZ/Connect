@@ -346,13 +346,14 @@
               .radio-btn {
                 input[type="radio"]:not(:checked) + label::after,
                 input[type="radio"]:checked + label::after {
-                  top: 3.5px;
-                  left: 6px;
+                  top: 3.1px;
+                  left: 3.5px;
                   width: 6px;
                   height: 6px;
                   border-radius: 25px;
                 }
                 label {
+                  width: 13px;
                   .radio-icon {
                     font-size: 14px;
                   }
@@ -361,6 +362,10 @@
                     width: 13px;
                     height: 13px;
                   }
+                }
+                .radio-btn-input {
+                  width: 13px;
+                  height: 13px;
                 }
               }
             }
