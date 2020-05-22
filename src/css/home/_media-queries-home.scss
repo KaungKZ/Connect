@@ -65,6 +65,7 @@
       width: 100%;
       right: 0;
       height: 100%;
+      opacity: 0.8;
 
       img {
         object-fit: cover;
@@ -443,9 +444,9 @@
   .theme-toggle {
     .toggle-btn {
       height: 25px;
-      width: 65px;
+      width: 55px;
       input:checked + .circle::before {
-        transform: translate(39px, -50%);
+        transform: translate(29px, -50%);
       }
 
       .circle::before {
@@ -461,6 +462,9 @@
   }
 
   .home-header {
+    .container {
+      width: 20%;
+    }
     .share-text a {
       margin-top: -10px;
     }
