@@ -61,7 +61,7 @@ export default function PlatformOption({ i }) {
           type="radio"
           id={XBOXinputID}
           name={radio_name}
-          className={radio_className}
+          className={`${radio_className} radio-btn-input`}
           value="xbl"
           onClick={(e) => handleRemoveRadioError(e.target.className)}
           required
@@ -78,7 +78,7 @@ export default function PlatformOption({ i }) {
           type="radio"
           id={PSNinputID}
           name={radio_name}
-          className={radio_className}
+          className={`${radio_className} radio-btn-input`}
           value="psn"
           onClick={(e) => handleRemoveRadioError(e.target.className)}
           required
