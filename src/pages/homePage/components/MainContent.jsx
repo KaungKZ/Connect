@@ -6,13 +6,7 @@ import { Redirect } from "react-router-dom";
 export const CONTEXT = createContext();
 
 export default function MainContent() {
-  // console.log(props);
-  // const theme = useContext(CONTEXT);
-
-  // console.log(theme);
-
   const [redirect, setRedirect] = useState(false);
-  // const [usernames, setUsernames] = useState({});
 
   const [dotaInputs, setDotaInputs] = useState({});
   const [fortniteInputs, setFortniteInputs] = useState({});
@@ -27,12 +21,9 @@ export default function MainContent() {
   const [focusOnOw, setFocusOnOw] = useState(false);
   const [bothFocus, setBothFocus] = useState(false);
 
-  // console.log(areInputsEmpty);
-
   function handleOnSubmit(e) {
     e.preventDefault();
 
-    // console.log(e);
     let emptyValue = 0;
 
     const inputs = e.target.querySelectorAll(".username-input");
@@ -113,15 +104,8 @@ export default function MainContent() {
     }
   }
 
-  // function calculateFortnitePlatform () {
-
-  // }
-
-  // function showError() {}
-
   function renderRedirect() {
     if (redirect) {
-      // console.log(usernames);
       return (
         <Redirect
           push
@@ -170,19 +154,11 @@ export default function MainContent() {
                     .map((_, i) => {
                       return <InputList key={i} i={i}></InputList>;
                     })}
-                  {/* <Link to="/app" className="submit-link"> */}
                 </div>
                 {renderRedirect()}
-                <button
-                  type="submit"
-                  className="submit-btn"
-                  // style={{
-                  //   cursor: `${areInputsEmpty ? "not-allowed" : "pointer"}`,
-                  // }}
-                >
+                <button type="submit" className="submit-btn">
                   Go
                 </button>
-                {/* </Link> */}
               </form>
             </div>
           </div>

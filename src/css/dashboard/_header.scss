@@ -1,11 +1,8 @@
-// body {
-//   background: #fdfdfd;
-// }
-.dashboard-header {
+header {
   color: var(--main-title-color);
   width: 40%;
   margin-left: 10%;
-  height: 120px;
+  height: 100px;
 
   .container {
     height: 100%;
@@ -17,7 +14,6 @@
     .title {
       font-size: 2rem;
       font-weight: 700;
-      // margin-top: 20px;
     }
   }
 }

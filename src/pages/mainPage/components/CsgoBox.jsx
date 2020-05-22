@@ -4,10 +4,7 @@ import csgoImg from "../../../images/csgo.png";
 
 export default function CsgoBox() {
   const context_values = useContext(CONTEXT_API);
-
   const { csgoValues } = context_values;
-
-  // console.log(csgoValues);
 
   return (
     <div className="dashboard-container csgo-dashboard-container">

@@ -38,7 +38,7 @@
 
 // home media-queries
 
-@import "./home/media-queries.scss";
+@import "./home/media-queries-home.scss";
 
 // ============= DASHBOARD PAGE ============
 
@@ -51,3 +51,7 @@
 // go-back-btn
 
 @import "./dashboard/go-back-btn.scss";
+
+// dashboard media-queries
+
+@import "./dashboard/media-queries-db.scss";

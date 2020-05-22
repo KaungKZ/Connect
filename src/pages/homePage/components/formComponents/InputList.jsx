@@ -41,8 +41,6 @@ export default function InputList({ i }) {
     } else {
       return;
     }
-
-    // console.log(focusOnFortnite, focusOnOw, bothFocus);
   }, [
     focusOnFortnite,
     setFocusOnFortnite,
@@ -63,7 +61,6 @@ export default function InputList({ i }) {
           onFocus={() => setAreInputsEmpty(false)}
           minLength={i === 0 ? "2" : "0"}
           maxLength={i === 0 ? "32" : "100"}
-          // autoFocus={ i === 1 || i === 2 ? (e) => handleFocusOnInput(e.target.className) : null}
           required
         />
         <label className="input-label">
@@ -97,7 +94,6 @@ export default function InputList({ i }) {
         <AdditionalOptions i={i}></AdditionalOptions>
         {areInputsEmpty && <ErrorMsgBox forWhat={"allEmpty"}></ErrorMsgBox>}
       </div>
-      {/* {areInputsEmpty ? console.log("empty") : console.log("nah")} */}
     </div>
   );
 }

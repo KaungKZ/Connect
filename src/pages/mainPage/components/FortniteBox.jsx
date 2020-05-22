@@ -11,10 +11,7 @@ export default function FortniteBox() {
   const { fortniteValues } = context_values;
   const accountIDRef = useRef();
 
-  // console.log(fortniteValues);
-
   function handleCopyAccountID() {
-    // document.execCommand("copy");
     const textArea = document.createElement("textarea");
     textArea.value = accountIDRef.current.innerText;
     document.body.appendChild(textArea);

@@ -1,0 +1,209 @@
+@media (max-width: 1024px) {
+  .dashboards .dashboard .dashboard-container {
+    .dota-box,
+    .fortnite-box {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+      grid-template-rows: repeat(2, minmax(280px, 1fr));
+      gap: 20px;
+      .box-column:first-child,
+      .box-column:nth-child(2) {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 80%;
+          left: 10%;
+          top: calc(100% + 10px);
+          background: #575757;
+          opacity: 0.8;
+          height: 1px;
+          border-radius: 9px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboards .dashboard {
+    .player-not-found {
+      .icon img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .text {
+        font-size: 12px;
+
+        .back-to-home-link {
+          a {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .dashboard-container {
+      .title {
+        .game-img {
+          width: 20px;
+        }
+
+        .game-username {
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .box {
+        .box-column {
+          .box-title {
+            font-size: 12px;
+          }
+
+          .box-content {
+            img {
+              width: 50px;
+              height: 50px;
+            }
+            .username {
+              font-size: 1rem;
+            }
+
+            span {
+              font-size: 12px;
+            }
+
+            .value-title {
+              font-size: 10px;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+      .dota-box {
+        .dota-profile {
+          .box-content .go-to-profile-link {
+            font-size: 14px;
+          }
+        }
+        .dota-rank {
+          .box-content p {
+            font-size: 1.8rem;
+          }
+        }
+
+        .dota-total-matches {
+          .box-content {
+            .wins span:first-child,
+            .loses span:first-child {
+              font-size: 10px;
+            }
+            .wins span:nth-child(2n),
+            .loses span:nth-child(2n) {
+              font-size: 1.7rem;
+            }
+          }
+        }
+
+        .dota-recent-match .box-content .status {
+          font-size: 14px;
+        }
+      }
+      .fortnite-box {
+        .fortnite-profile .box-content {
+          .wrapper-account-id.copied-text-hide::after,
+          .wrapper-account-id.copied-text-show::after {
+            font-size: 10px;
+            width: 120px;
+          }
+          .wrapper-account-id .account-id {
+            font-size: 10px;
+          }
+        }
+        .fortnite-recent-match .box-content .no-recent-match-text {
+          font-size: 10px;
+        }
+
+        .fortnite-stats .box-content span {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+
+  .go-back {
+    width: 50px;
+    height: 50px;
+    top: 15%;
+    background: rgba(117, 117, 117, 1);
+
+    .wrapper-icon {
+      margin-left: -3px;
+
+      .icon {
+        transition: all 200ms;
+      }
+    }
+
+    &:hover {
+      .wrapper-icon .icon {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    .container {
+      .title {
+        font-size: 1.7rem;
+      }
+    }
+  }
+  .dashboards .dashboard {
+    .player-not-found .text {
+      font-size: 10px;
+    }
+    .dashboard-container {
+      .title .game-username {
+        font-size: 12px;
+      }
+      .ow-box,
+      .csgo-box {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, minmax(200px, 1fr));
+        row-gap: 20px;
+
+        .box-column:first-child,
+        .box-column:nth-child(2) {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            left: 15%;
+            top: calc(100% + 10px);
+            background: #575757;
+            opacity: 0.8;
+            height: 1px;
+            border-radius: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .go-back {
+    width: 40px;
+    height: 40px;
+
+    .wrapper-icon {
+      margin-left: -3px;
+
+      .icon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

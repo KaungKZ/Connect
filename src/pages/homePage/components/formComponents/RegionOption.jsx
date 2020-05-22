@@ -4,36 +4,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function RegionOption() {
-  // const [focused, setFocused] = useState(false);
   const selectRef = useRef();
 
-  //const csgo_input = selectRef.current.parentNode.parentNode.parentNode.nextElementSibling;
-
-  // console.log(focused);
-
   function handleOnFocus(e) {
-    //console.log("focused in");
-
     const eParent = e.target.parentNode.parentNode;
-
     eParent.style.zIndex = "99";
-    // eParent.style.PointerEvents = "all";
-
-    // console.log(eParent);
   }
   function handleOnBlur(e) {
-    //console.log("focused out");
-
     const eParent = e.target.parentNode.parentNode;
     eParent.style.zIndex = "auto";
   }
 
   return (
-    // <div className="region-for-ow">
     <>
       <div
         className="region-for-ow select-box"
-        // onClick={handleRemovePointerE}
         onBlur={handleOnBlur}
         onFocus={handleOnFocus}
         ref={selectRef}
@@ -95,12 +80,6 @@ export default function RegionOption() {
             />
             <p className="select-box__input-text">Global</p>
           </div>
-          {/* <img
-            class="select-box__icon"
-            src={arrowUp}
-            alt="Arrow Icon"
-            aria-hidden="true"
-          /> */}
 
           <FontAwesomeIcon
             icon={faChevronUp}

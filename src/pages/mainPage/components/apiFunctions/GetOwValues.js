@@ -1,4 +1,3 @@
-// import React from "react";
 import axios from "axios";
 export default function GetOwValues(
   setIsOwPlayerFound,
@@ -8,19 +7,15 @@ export default function GetOwValues(
   ow_platform,
   ow_region
 ) {
-  // console.log(ow_username, ow_platform, ow_region);
-  // Overwatch (SUCCESS) (1st API)
   const proxy_URL = "https://cors-anywhere.herokuapp.com/";
-  //
+
   axios
     .get(
       proxy_URL +
         `https://best-overwatch-api.herokuapp.com/player/${ow_platform}/${ow_region}/${ow_username}`
     )
     .then((res) => {
-      // console.log(res.data);
       if (!res.data || Object.keys(res.data).length === 0) {
-        console.log("ow not found");
         setIsOwPlayerFound(false);
         setIsOwLoading(false);
         return;
@@ -55,25 +50,11 @@ export default function GetOwValues(
       });
 
       setIsOwLoading(false);
-      // setIsPlayerFound((prev) => {
-      //   return [
-      //     ...prev,
-      //     {
-      //       value: "ow",
-      //       playerFound: true,
-      //     },
-      //   ];
-      // });
-      // console.log(res);
     })
     .catch((err) => {
       if (err.response) {
         setIsOwPlayerFound(false);
         setIsOwLoading(false);
-        console.log(err.response.data);
       }
     });
-
-  // Overwatch (2nd API)
-  // console.log(isDotaLoading, isFortniteLoading);
 }

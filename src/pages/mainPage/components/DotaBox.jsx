@@ -7,8 +7,6 @@ export default function DotaBox() {
   const context_values = useContext(CONTEXT_API);
 
   const { dotaValues } = context_values;
-
-  // console.log(dotaValues);
   return (
     <div className="dashboard-container dota-dashboard-container">
       <div className="title">
@@ -18,21 +16,17 @@ export default function DotaBox() {
 
       <div className="box dota-box">
         <div className="dota-profile box-column">
-          {/* <div className="username"> */}
           <div className="box-title">
             <p>Profile</p>
           </div>
           <div className="box-content">
             <p className="username">{dotaValues.profile.username}</p>
-            {/* </div> */}
-            {/* <div className="avatar-img"> */}
+
             <img
               src={dotaValues.profile.avatar_url}
               alt=""
               className="avatar-img"
             />
-            {/* </div> */}
-            {/* <div className="go-to-profile-link"> */}
             <a
               href={dotaValues.profile.profile_link}
               className="go-to-profile-link"
@@ -40,7 +34,6 @@ export default function DotaBox() {
               Go to profile
             </a>
           </div>
-          {/* </div> */}
         </div>
         <div className="dota-rank box-column">
           <div className="box-title">

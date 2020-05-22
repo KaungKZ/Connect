@@ -7,7 +7,6 @@ export default function OwBox() {
 
   const { owValues, ow_username } = context_values;
 
-  // console.log(owValues);
   return (
     <div className="dashboard-container ow-dashboard-container">
       <div className="title">

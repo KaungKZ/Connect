@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop } from "@fortawesome/free-solid-svg-icons";
-// import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { faPlaystation } from "@fortawesome/free-brands-svg-icons";
 import { faXbox } from "@fortawesome/free-brands-svg-icons";
 import { CONTEXT } from "../MainContent";
@@ -11,22 +9,12 @@ import ErrorMsgBox from "./ErrorMsgBox";
 export default function PlatformOption({ i }) {
   const context_values = useContext(CONTEXT);
 
-  // console.log(context_values);
-
   const {
     areFortniteRadiosEmpty,
     areOwRadiosEmpty,
     setAreFortniteRadiosEmpty,
     setAreOwRadiosEmpty,
   } = context_values;
-
-  // useEffect(() => {
-
-  // }, [])
-
-  // function handleAdditionOptionsFocus() {
-  //   // console.log("focused");
-  // }
 
   const wrapper_className = i === "fortnite" ? "fortnite" : "ow";
 
@@ -51,12 +39,10 @@ export default function PlatformOption({ i }) {
 
   return (
     <div className={`platform-for-${wrapper_className}`}>
-      {/* <div onClick={testFunc}>test</div> */}
       <div className="radio-btn pc" title="Desktop">
         <input
           type="radio"
           id={PCinputID}
-          // id="fortnite-pc-input"
           className={radio_className}
           name={radio_name}
           value="pc"

@@ -201,15 +201,34 @@
       }
       .box {
         width: 80%;
-
         .inputs
           .input-form
           .wrapper-content
-          .input
-          .wrapper-input
-          [data-tooltip]::before {
-          min-width: 200px;
-          font-size: 10px;
+          .additional-options
+          .platform-for-fortnite
+          .radio-btn-error,
+        .inputs
+          .input-form
+          .wrapper-content
+          .additional-options
+          .platform-for-ow
+          .radio-btn-error {
+          width: 200px;
+          .warning-icon {
+            font-size: 14px;
+          }
+        }
+
+        .inputs .input-form .wrapper-content {
+          .all-empty-error {
+            .warning-icon {
+              font-size: 14px;
+            }
+          }
+          .input .wrapper-input [data-tooltip]::before {
+            min-width: 200px;
+            font-size: 10px;
+          }
         }
       }
     }
@@ -276,12 +295,82 @@
     .container {
       .box {
         width: 90%;
-      }
+        .inputs .input-form .wrapper-content .input img {
+          width: 30px;
+        }
+        .inputs
+          .input-form
+          .wrapper-content
+          .additional-options
+          .platform-for-fortnite
+          .radio-btn-error,
+        .inputs
+          .input-form
+          .wrapper-content
+          .additional-options
+          .platform-for-ow
+          .radio-btn-error {
+          .warning-icon {
+            font-size: 12px;
+          }
+          p {
+            font-size: 9px;
+          }
+        }
 
-      .title {
-        font-size: 1.8rem;
-        text-align: center;
-        width: 80%;
+        .inputs .input-form .wrapper-content .all-empty-error {
+          width: 200px;
+          .warning-icon {
+            font-size: 12px;
+          }
+
+          p {
+            font-size: 9px;
+          }
+        }
+
+        .title {
+          font-size: 1.8rem;
+          text-align: center;
+          width: 80%;
+        }
+
+        .inputs .input-form .wrapper-content .input {
+          .wrapper-input .additional-options {
+            width: 100%;
+            .platform-for-fortnite,
+            .platform-for-ow {
+              min-width: unset;
+              width: 40%;
+
+              .radio-btn {
+                input[type="radio"]:not(:checked) + label::after,
+                input[type="radio"]:checked + label::after {
+                  top: 3.5px;
+                  left: 6px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 25px;
+                }
+                label {
+                  .radio-icon {
+                    font-size: 14px;
+                  }
+
+                  &::before {
+                    width: 13px;
+                    height: 13px;
+                  }
+                }
+              }
+            }
+
+            .region-for-ow {
+              min-width: unset;
+              width: 50%;
+            }
+          }
+        }
       }
     }
   }
@@ -322,6 +411,29 @@
   }
 }
 
+@media (max-width: 530px) {
+  .connect-box
+    .container
+    .box
+    .inputs
+    .input-form
+    .wrapper-content
+    .additional-options {
+    .platform-for-fortnite .radio-btn-error,
+    .platform-for-ow .radio-btn-error {
+      top: 100%;
+      left: 0;
+      transform: translate(0%, 50%);
+
+      .triangle {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -55%) rotate(90deg);
+      }
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .theme-toggle {
     .toggle-btn {
@@ -348,32 +460,10 @@
       margin-top: -10px;
     }
   }
-  // .connect-box
-  //   .container
-  //   .box
-  //   .inputs
-  //   .input-form
-  //   .wrapper-content
-  //   .input
-  //   .wrapper-input
-  //   .username-input:focus
-  //   + .input-label
-  //   .username,
-  // .connect-box
-  //   .container
-  //   .box
-  //   .inputs
-  //   .input-form
-  //   .wrapper-content
-  //   .input
-  //   .wrapper-input
-  //   .username-input:valid
-  //   + .input-label
-  //   .username {
-  //   font-size: 12px;
-  // }
-
   .connect-box .container {
+    .title {
+      font-size: 1.5rem;
+    }
     .box {
       padding: 10% 6% 6% 6%;
       .inputs .input-form {
@@ -383,30 +473,6 @@
             .wrapper-input .username-input:valid + .input-label .username {
               font-size: 12px;
             }
-            .wrapper-input .additional-options {
-              width: 100%;
-              .platform-for-fortnite,
-              .platform-for-ow {
-                min-width: unset;
-                width: 40%;
-
-                .radio-btn label {
-                  .radio-icon {
-                    font-size: 14px;
-                  }
-
-                  &::before {
-                    width: 13px;
-                    height: 13px;
-                  }
-                }
-              }
-
-              .region-for-ow {
-                min-width: unset;
-                width: 50%;
-              }
-            }
             .wrapper-input .username-input[type="text"] {
               font-size: 12px;
             }
@@ -415,13 +481,8 @@
             }
             .wrapper-input [data-tooltip]::before {
               min-width: 50px;
-              // width: 50px;
               left: -50%;
               font-size: 10px;
-            }
-
-            img {
-              width: 30px;
             }
           }
         }
@@ -471,9 +532,6 @@
           .select-box {
           font-size: 10px;
         }
-      }
-      .title {
-        font-size: 1.5rem;
       }
     }
   }

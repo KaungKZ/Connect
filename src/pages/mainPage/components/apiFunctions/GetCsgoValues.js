@@ -1,4 +1,3 @@
-// import React from "react";
 import axios from "axios";
 
 export default function GetCsgoValues(
@@ -7,12 +6,9 @@ export default function GetCsgoValues(
   setCsgoValues,
   csgo_username
 ) {
-  // console.log(csgo_username);
-  // console.log(csgo_username);
   const proxy_URL = "https://cors-anywhere.herokuapp.com/";
   const tracker_API_key = "2262ffae-2839-4fe9-b8da-1b1630e8b176";
 
-  // console.log(csgo_username);
   axios
     .get(
       proxy_URL +
@@ -21,7 +17,6 @@ export default function GetCsgoValues(
         headers: {
           "TRN-Api-Key": tracker_API_key,
           Accept: "application/json",
-          // "Accept-Encoding": "gzip",
         },
       }
     )
@@ -30,9 +25,6 @@ export default function GetCsgoValues(
 
       const item = res.data.data;
       const stats = res.data.data.segments[0].stats;
-
-      // console.log(stats);
-
       setCsgoValues({
         profile: {
           username: item.platformInfo.platformUserHandle,
@@ -51,13 +43,11 @@ export default function GetCsgoValues(
       });
 
       setIsCsgoLoading(false);
-      // console.log(res);
     })
     .catch((err) => {
       if (err.response) {
         setIsCsgoPlayerFound(false);
         setIsCsgoLoading(false);
-        console.log(err.response.data);
       }
     });
 }

@@ -3,18 +3,12 @@ import { CONTEXT } from "../../../App";
 import lightmodeImg from "../../../images/light-mode-icon.svg";
 
 export default function Toggle() {
-  //console.log(CONTEXT);
   const { theme, setTheme } = useContext(CONTEXT);
 
   const checked = theme.checked;
 
-  // console.log(theme);
-
-  // console.log(theme);
-
   function handleThemeChange(e) {
     if (checked === false) {
-      //console.log("light mode");
       localStorage.setItem("theme", "light");
       document
         .getElementsByTagName("HTML")[0]
@@ -35,7 +29,6 @@ export default function Toggle() {
   }
   return (
     <div className="theme-toggle" title="Toggle theme">
-      {/* <p>Light Mode</p> */}
       <label className="toggle-btn">
         <input
           type="checkbox"

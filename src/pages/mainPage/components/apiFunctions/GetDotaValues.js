@@ -1,4 +1,3 @@
-// import React from "react";
 import axios from "axios";
 
 export default function GetDotaValues(
@@ -7,7 +6,6 @@ export default function GetDotaValues(
   setIsDotaLoading,
   setIsDotaPlayerFound
 ) {
-  // const proxy_URL = "https://cors-anywhere.herokuapp.com/";
   axios
     .all([
       axios.get(`https://api.opendota.com/api/players/${dota_username}`),
@@ -23,33 +21,17 @@ export default function GetDotaValues(
       axios.get("https://api.opendota.com/api/heroes"),
     ])
     .then((resArr) => {
-      // console.log(resArr);
       if (!resArr[0].data.profile) {
-        console.log("dota player not found");
         setIsDotaPlayerFound(false);
-        // setIsPlayerFound((prev) => {
-        //   return [
-        //     ...prev,
-        //     {
-        //       value: "dota",
-        //       playerFound: false,
-        //     },
-        //   ];
-        // });
         setIsDotaLoading(false);
-        // PlayerNotFound();
         return;
       }
-      //console.log("received");
-      // console.log(resArr);
       setIsDotaPlayerFound(true);
 
       const item1 = resArr[0].data;
       const item2 = resArr[1].data;
       const item3 = resArr[2].data[0];
       const item4 = resArr[3].data;
-
-      // console.log(item3);
 
       setDotaValues((prevState) => {
         return {
@@ -74,32 +56,11 @@ export default function GetDotaValues(
         };
       });
       setIsDotaLoading(false);
-      // setIsPlayerFound((prev) => {
-      //   return [
-      //     ...prev,
-      //     {
-      //       value: "dota",
-      //       playerFound: true,
-      //     },
-      //   ];
-      // });
     })
     .catch((err) => {
       if (err.response) {
         setIsDotaPlayerFound(false);
         setIsDotaLoading(false);
-        console.log(err.response.data);
       }
     });
 }
-
-// useEffect(() => {
-//     getValuesFromAPI1();
-//     getValuesFromAPI2();
-//     getValuesFromAPI3();
-// }, [])
-
-// getValuesFromAPI1 () {
-//     axios.get(url)
-//     .. code
-// }

@@ -13,10 +13,7 @@ export default function App() {
     theme: localStorage.getItem("theme"),
   });
 
-  // console.log(theme);
-
   useEffect(() => {
-    // localStorage.setItem("theme", "dark");
     document
       .getElementsByTagName("HTML")[0]
       .setAttribute("data-theme", localStorage.getItem("theme"));
@@ -26,7 +23,6 @@ export default function App() {
     theme,
     setTheme,
   };
-  // console.log(theme);
   return (
     <Router>
       <Switch>

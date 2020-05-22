@@ -1,4 +1,3 @@
-// import React from "react";
 import axios from "axios";
 
 export default function GetFortniteValues(
@@ -26,19 +25,13 @@ export default function GetFortniteValues(
       if (res.data.error) {
         setIsFortnitePlayerFound(false);
         setIsFortniteLoading(false);
-        console.log("fortnite player not found");
         return;
       }
 
       setIsFortnitePlayerFound(true);
-
-      // console.log(res);
-      // console.log(res);
       const data = res.data;
       const stats = res.data.lifeTimeStats;
       const recent_match = res.data.recentMatches;
-
-      // console.log(recent_match);
 
       setFortniteValues((prevState) => {
         return {
@@ -70,22 +63,11 @@ export default function GetFortniteValues(
         };
       });
       setIsFortniteLoading(false);
-      // setIsPlayerFound((prev) => {
-      //   return [
-      //     ...prev,
-      //     {
-      //       value: "fortnite",
-      //       playerFound: true,
-      //     },
-      //   ];
-      // });
     })
     .catch((err) => {
       if (err.response) {
         setIsFortnitePlayerFound(false);
         setIsFortniteLoading(false);
-        // console.log("ok");
-        console.log(err.response.data);
       }
     });
 
