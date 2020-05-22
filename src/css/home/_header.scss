@@ -7,6 +7,7 @@
   align-items: flex-end;
   float: right;
   margin-right: 10%;
+
   z-index: 99;
   p {
     color: var(--main-title-color);
@@ -108,8 +109,19 @@
         width: 60px;
 
         circle {
-          fill: var(--logo-color);
           transition: fill 400ms;
+        }
+
+        &.logo-change {
+          circle {
+            fill: #7cd685;
+          }
+        }
+
+        &.logo-doesnt-change {
+          circle {
+            fill: #fff;
+          }
         }
       }
     }
