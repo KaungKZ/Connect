@@ -100,7 +100,7 @@ export default function MainApp(props) {
         compareProps.push(...Object.keys(arr[0]));
       arr.map((item) => {
         if (modifiedArray.length === 0) {
-          modifiedArray.push(item);
+          return modifiedArray.push(item);
         } else {
           if (
             !modifiedArray.some((item2) =>
@@ -109,7 +109,7 @@ export default function MainApp(props) {
               )
             )
           ) {
-            modifiedArray.push(item);
+            return modifiedArray.push(item);
           }
         }
       });
