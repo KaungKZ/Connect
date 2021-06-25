@@ -30,6 +30,8 @@ export default function DotaBox() {
             <a
               href={dotaValues.profile.profile_link}
               className="go-to-profile-link"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Go to profile
             </a>

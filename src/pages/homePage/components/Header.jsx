@@ -35,7 +35,13 @@ export default function Header() {
         </div>
       </div>
       <div className="share-text">
-        <a href="https://twitter.com/KaungKZ2000">Share</a>
+        <a
+          href="https://twitter.com/KaungKZ2000"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Share
+        </a>
       </div>
       <div className="header-bg">
         <img src={header_bg} alt="" />

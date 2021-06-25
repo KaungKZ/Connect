@@ -7,12 +7,11 @@ export default function GetOwValues(
   ow_platform,
   ow_region
 ) {
-  const proxy_URL = "https://cors-anywhere.herokuapp.com/";
+  const proxy_URL = "https://cors.bridged.cc/";
 
   axios
     .get(
-      proxy_URL +
-        `https://best-overwatch-api.herokuapp.com/player/${ow_platform}/${ow_region}/${ow_username}`
+      `${proxy_URL}https://best-overwatch-api.herokuapp.com/player/${ow_platform}/${ow_region}/${ow_username}`
     )
     .then((res) => {
       if (!res.data || Object.keys(res.data).length === 0) {
